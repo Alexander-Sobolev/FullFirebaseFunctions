@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B429400729C4E12200D71481 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429400629C4E12200D71481 /* SignInEmailView.swift */; };
 		B429400929C4E46700D71481 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429400829C4E46700D71481 /* AuthenticationManager.swift */; };
+		B429400B29C6147F00D71481 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429400A29C6147F00D71481 /* RootView.swift */; };
+		B429400D29C62AE800D71481 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429400C29C62AE800D71481 /* SettingsView.swift */; };
 		B4A1CA5E29C3BD0A006C84DA /* FullFirebaseFunctionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A1CA5D29C3BD0A006C84DA /* FullFirebaseFunctionsApp.swift */; };
 		B4A1CA6029C3BD0A006C84DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A1CA5F29C3BD0A006C84DA /* ContentView.swift */; };
 		B4A1CA6229C3BD0C006C84DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A1CA6129C3BD0C006C84DA /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		B429400629C4E12200D71481 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		B429400829C4E46700D71481 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		B429400A29C6147F00D71481 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B429400C29C62AE800D71481 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B4A1CA5A29C3BD0A006C84DA /* FullFirebaseFunctions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullFirebaseFunctions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A1CA5D29C3BD0A006C84DA /* FullFirebaseFunctionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirebaseFunctionsApp.swift; sourceTree = "<group>"; };
 		B4A1CA5F29C3BD0A006C84DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,8 +98,10 @@
 		B4A1CA7529C3CAA5006C84DA /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				B429400A29C6147F00D71481 /* RootView.swift */,
 				B4A1CA7629C3CADD006C84DA /* AuthenticationView.swift */,
 				B429400629C4E12200D71481 /* SignInEmailView.swift */,
+				B429400C29C62AE800D71481 /* SettingsView.swift */,
 				B429400829C4E46700D71481 /* AuthenticationManager.swift */,
 			);
 			path = Authentication;
@@ -180,8 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B429400D29C62AE800D71481 /* SettingsView.swift in Sources */,
 				B4A1CA6029C3BD0A006C84DA /* ContentView.swift in Sources */,
 				B4A1CA5E29C3BD0A006C84DA /* FullFirebaseFunctionsApp.swift in Sources */,
+				B429400B29C6147F00D71481 /* RootView.swift in Sources */,
 				B4A1CA7729C3CADD006C84DA /* AuthenticationView.swift in Sources */,
 				B429400929C4E46700D71481 /* AuthenticationManager.swift in Sources */,
 				B429400729C4E12200D71481 /* SignInEmailView.swift in Sources */,
