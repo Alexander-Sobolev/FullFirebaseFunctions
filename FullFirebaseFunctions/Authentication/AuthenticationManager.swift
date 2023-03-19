@@ -32,8 +32,15 @@ final class AuthenticationManager {
     return AuthDataResultModel(user: user)
   }
   
+  @discardableResult // значит что мы знаем что есть результатб, возвращаемое значение, но мы не всегда его можим использовать
   func createUser(email: String, password: String) async throws -> AuthDataResultModel {
     let authDataResults = try await Auth.auth().createUser(withEmail: email, password: password)
+    return AuthDataResultModel(user: authDataResults.user)
+  }
+  
+  @discardableResult
+  func signInUser(email: String, password: String) async throws -> AuthDataResultModel {
+    let authDataResults = try await Auth.auth().signIn(withEmail: email, password: password)
     return AuthDataResultModel(user: authDataResults.user)
   }
   
