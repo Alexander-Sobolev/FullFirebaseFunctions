@@ -19,7 +19,7 @@ final class AuthenticationViewModel: ObservableObject {
         }
         let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
         
-        let idToken: String = ""
+        guard let idToken: String = gidSignInResult.user.idToken?.tokenString else { throw URLError(.badServerResponse) }
         let accessToken: String = ""
         
         let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
