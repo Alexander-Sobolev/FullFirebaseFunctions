@@ -7,39 +7,10 @@
 
 import SwiftUI
 
-@MainActor
-final class SignInEmailViewModel: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    
-    func signUp() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found.")
-            return
-        }
-        
-        try await AuthenticationManager.shared.createUser(
-            email: email,
-            password: password
-        )
-    }
-    
-    func signIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found.")
-            return
-        }
-        
-        try await AuthenticationManager.shared.signInUser(
-            email: email,
-            password: password
-        )
-    }
-}
-
 struct SignInEmailView: View {
-    @Binding var showSignInView: Bool
+    
     @StateObject private var viewModel = SignInEmailViewModel()
+    @Binding var showSignInView: Bool
     
     var body: some View {
         VStack {
@@ -47,19 +18,17 @@ struct SignInEmailView: View {
                 .padding()
                 .background(Color.gray.opacity(0.4))
                 .cornerRadius(10)
-                .autocapitalization(.none)
             
             SecureField("Password...", text: $viewModel.password)
                 .padding()
                 .background(Color.gray.opacity(0.4))
                 .cornerRadius(10)
-                .keyboardType(.numberPad)
-            
+
             Button {
                 Task {
                     do {
                         try await viewModel.signUp()
-                        showSignInView = false // If we log in and no error is thrown, put false
+                        showSignInView = false
                         return
                     } catch {
                         print(error)
@@ -67,7 +36,7 @@ struct SignInEmailView: View {
                     
                     do {
                         try await viewModel.signIn()
-                        showSignInView = false 
+                        showSignInView = false
                         return
                     } catch {
                         print(error)
@@ -82,6 +51,7 @@ struct SignInEmailView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
+            
             Spacer()
         }
         .padding()
